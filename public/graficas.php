@@ -37,7 +37,7 @@ $rol = $_SESSION['rol'];
             <input type="submit" value="Registrar">
         </form>
     <?php else: ?>
-        <p>Gestion Nueva</p>
+        <a href="mantenimiento.php">Mantenimiento</a>
     <?php endif; ?>
 </body>
 </html>

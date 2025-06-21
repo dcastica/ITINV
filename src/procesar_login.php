@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'conexion.php';
+require 'build/conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $correo = $_POST['usuario'];
