@@ -6,8 +6,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $correo = $_POST['usuario'];
     $contrasena = $_POST['contrasena'];
 
-    
-
     $stmt = $pdo->prepare("SELECT * FROM UsuariosInv WHERE correo = :correo");
     $stmt->bindParam(':correo', $correo);
     $stmt->execute();
