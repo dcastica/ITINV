@@ -22,7 +22,7 @@ $rol = $_SESSION['rol'];
 
     <?php if ($rol === 'Admin'): ?>
         <h3>Registrar nuevo usuario</h3>
-        <form method="POST" action="../src/registrar_usuario.php">
+        <form method="POST" action="../src/build/registrar_usuario.php">
             <label>Nombre:</label><br>
             <input type="text" name="nombre" required><br>
             <label>Correo:</label><br>
