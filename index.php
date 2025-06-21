@@ -23,6 +23,6 @@ $mensaje = isset($_GET['error']) ? "Credenciales incorrectas" : "";
         <input type="password" name="contrasena" required><br><br>
         <input type="submit" value="Ingresar">
     </form>
-    <p style="color:red;"><?= $mensaje ?></p>
+    <p style="color:blue;"><?= $mensaje ?></p>
 </body>
 </html>
