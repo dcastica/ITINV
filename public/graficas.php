@@ -37,7 +37,7 @@ $rol = $_SESSION['rol'];
             <input type="submit" value="Registrar">
         </form>
     <?php else: ?>
-        <p>No tienes permisos para registrar nuevos usuarios.</p>
+        <p>Gestion Nueva</p>
     <?php endif; ?>
 </body>
 </html>
