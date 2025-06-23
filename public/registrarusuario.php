@@ -15,7 +15,6 @@ if (!isset($_SESSION['usuario'])) {
 <body>
     <h3>Registrar nuevo usuario</h3>
     <a href="graficas.php">Atrás</a>
-
     <form method="POST" action="../src/build/registrar_usuario.php">
             <label>Nombre:</label><br>
             <input type="text" name="nombre" required><br>
