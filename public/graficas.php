@@ -15,6 +15,7 @@ $rol = $_SESSION['rol'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel - TIMS</title>
+    <script src="../src/js/paginas_contenido.js"></script>
 </head>
 <body>
     <h2>Bienvenido, <?= htmlspecialchars($nombre) ?> (<?= htmlspecialchars($rol) ?>)</h2>
@@ -37,7 +38,10 @@ $rol = $_SESSION['rol'];
             <input type="submit" value="Registrar">
         </form>
     <?php else: ?>
-        <a href="mantenimiento.php">Mantenimiento</a>
+        <li onclick="loadContent('mantenimiento.php','.contenido')">Mantenimiento</li>
+        <section id="contenido">
+
+        </section>
     <?php endif; ?>
 </body>
 </html>
