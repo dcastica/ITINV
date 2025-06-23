@@ -1,6 +1,6 @@
 function loadContent(url, cont, callback) {
     
-    const centro = document.querySelector(cont);
+    const centro = document.getElementById(cont);
     // Hacer la solicitud para cargar el contenido de la página
     fetch(url)
     .then(response => response.text())

@@ -15,33 +15,23 @@ $rol = $_SESSION['rol'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel - TIMS</title>
-    <script src="../src/js/paginas_contenido.js"></script>
 </head>
 <body>
     <h2>Bienvenido, <?= htmlspecialchars($nombre) ?> (<?= htmlspecialchars($rol) ?>)</h2>
     <a href="../src/cerrar_sesion.php">Cerrar sesión</a>
 
     <?php if ($rol === 'Admin'): ?>
-        <h3>Registrar nuevo usuario</h3>
-        <form method="POST" action="../src/build/registrar_usuario.php">
-            <label>Nombre:</label><br>
-            <input type="text" name="nombre" required><br>
-            <label>Correo:</label><br>
-            <input type="email" name="correo" required><br>
-            <label>Contraseña:</label><br>
-            <input type="password" name="password" required><br>
-            <label>Rol:</label><br>
-            <select name="rol">
-                <option value="Usuario">Usuario</option>
-                <option value="Admin">Administrador</option>
-            </select><br><br>
-            <input type="submit" value="Registrar">
-        </form>
+        <ul>
+            <li><a href="graficas.php">Inicio</a></li>
+            <li onclick="loadContent('registrarusuario.php','contenido')">Registrar Usuario</li>
+        </ul>
     <?php else: ?>
-        <li onclick="loadContent('mantenimiento.php','.contenido')">Mantenimiento</li>
-        <section id="contenido">
-
-        </section>
+        <li onclick="loadContent('mantenimiento.php','contenido')">Mantenimiento</li>
+        
     <?php endif; ?>
+    <section id="contenido">
+
+    </section>
 </body>
+<script src="../src/js/paginas_contenido.js"></script>
 </html>
