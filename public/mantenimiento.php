@@ -14,8 +14,6 @@ if (!isset($_SESSION['usuario'])) {
 </head>
 <body>
     <h2>FORMATO HOJA DE VIDA DE EQUIPO</h2>
-    <a href="graficas.php">Atrás</a>
-
     <form method="POST" action="../src/build/registrar_mantenimiento.php" enctype="multipart/form-data">
         <h3>1. Hoja De Vida</h3>
         <label>Nombre Del Equipo:</label><br>

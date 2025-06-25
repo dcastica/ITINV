@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         ':usuario_registro' => $usuario_registro
     ]);
 
-    header("Location: ../../public/mantenimiento.php?ok=1");
+    header("Location: ../../public/graficas.php?ok=1");
     exit();
 }
 ?>

@@ -13,20 +13,28 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $rol = $_POST['rol'];
 
-    $stmt = $pdo->prepare("SELECT COUNT(*) FROM UsuariosInv WHERE correo = :correo");
-    $stmt->bindParam(':correo', $correo);
-    $stmt->execute();
-    if ($stmt->fetchColumn() > 0) {
-        die("Error: el correo ya existe.");
+    try {
+        // Verifica si ya existe el correo
+        $stmt = $pdo->prepare("SELECT COUNT(*) FROM UsuariosInv WHERE correo = :correo");
+        $stmt->bindParam(':correo', $correo);
+        $stmt->execute();
+
+        if ($stmt->fetchColumn() > 0) {
+            die("Error: el correo ya existe.");
+        }
+
+        // Insertar nuevo usuario
+        $stmt = $pdo->prepare("INSERT INTO UsuariosInv (nombre, correo, password, rol) VALUES (:nombre, :correo, :password, :rol)");
+        $stmt->bindParam(':nombre', $nombre);
+        $stmt->bindParam(':correo', $correo);
+        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':rol', $rol);
+        $stmt->execute();
+
+        echo "✅ Usuario registrado correctamente.";
+        // header("Location: ../../public/graficas.php?ok=1");
+    } catch (PDOException $e) {
+        echo "❌ Error en la base de datos: " . $e->getMessage();
     }
-
-    $stmt = $pdo->prepare("INSERT INTO UsuariosInv (nombre, correo, password, rol) VALUES (:nombre, :correo, :password, :rol)");
-    $stmt->bindParam(':nombre', $nombre);
-    $stmt->bindParam(':correo', $correo);
-    $stmt->bindParam(':password', $password);
-    $stmt->bindParam(':rol', $rol);
-    $stmt->execute();
-
-    header("Location: ../public/graficas.php");
 }
 ?>
