@@ -1,6 +1,7 @@
 <?php
 session_start();
-if (!isset($_SESSION['usuario']) || $_SESSION['rol'] !== 'Administrador') {
+
+if (!isset($_SESSION['usuario']) || $_SESSION['rol'] !== 'Admin') {
     header("Location: ../../index.php");
     exit();
 }
@@ -32,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->execute();
 
         echo "✅ Usuario registrado correctamente.";
-        // header("Location: ../../public/graficas.php?ok=1");
+        header("Location: ../../public/graficas.php?ok=1");
     } catch (PDOException $e) {
         echo "❌ Error en la base de datos: " . $e->getMessage();
     }
