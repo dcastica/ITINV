@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Carpeta de subida
     $carpeta = "uploads/";
-    if (!is_dir($carpeta)) mkdir($carpeta, 0777, true);
+    if (!is_dir($carpeta)) mkdir($carpeta, 0777, recursive: true);
 
     function subirImagen($campo) {
         global $carpeta;
