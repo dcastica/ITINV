@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'build/conexion.php';
+require 'conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $correo = $_POST['usuario'];
@@ -15,9 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION['usuario'] = $usuario['correo'];
         $_SESSION['nombre'] = $usuario['nombre'];
         $_SESSION['rol'] = $usuario['rol'];
-        header("Location: ../public/graficas.php");
+        header("Location: ../../public/graficas.php");
     } else {
-        header("Location: ../index.php?error=1");
+        header("Location: ../../index.php?error=1");
     }
 }
 ?>

@@ -18,7 +18,7 @@ $rol = $_SESSION['rol'];
 </head>
 <body>
     <h2>Bienvenido, <?= htmlspecialchars($nombre) ?> (<?= htmlspecialchars($rol) ?>)</h2>
-    <a href="../src/cerrar_sesion.php">Cerrar sesión</a>
+    <a href="../src/build/cerrar_sesion.php">Cerrar sesión</a>
 
     <?php if ($rol === 'Admin'): ?>
         <ul>
